@@ -32,7 +32,9 @@ build-backend = "setuptools.build_meta"
 [tool.setuptools.packages.find]
 include = [
     "neuralop",
-    "neuralop.*",    
+    "neuralop.*",
+    "config",
+    "config.*",    
 ]
 
 # Dynamic versioning from neuralop.__init__
