@@ -24,11 +24,11 @@ dependencies = [
     "zencfg",
     "tensorly",
     "tensorly-torch",
-    "torch-harmonics"
+    "torch-harmonics",
     "matplotlib",
     "opt-einsum",
     "h5py",
-    "zarr"
+    "zarr",
 ]
 
 # `version` is automatically set by flit to use `swirl_dynamics.__version__`
