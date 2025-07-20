@@ -1,71 +1,43 @@
 [project]
+# Project metadata. Available keys are documented at:
+# https://packaging.python.org/en/latest/specifications/declaring-project-metadata
 name = "neuraloperator"
-description = "NeuralOperator: Learning in Infinite Dimensions"
-authors = [
-    {name = "Jean Kossaifi <jean.kossaifi@gmail.com>, David Pitt <david.h.pitt@gmail.com>, Nik Kovachki, Zongyi Li", email="david.h.pitt@gmail.com"},
+description = "Machine learning for Computational Fluid Dynamics."
+readme = "README.md"
+requires-python = ">=3.9" 
+license = {file = "LICENSE"}
+# authors = [
+#   {name = "camlab-ethz", email="yramic@ethz.ch"},
+]
+# classifiers = [  # List of https://pypi.org/classifiers/
+#     "Programming Language :: Python :: 3",
+#     "Programming Language :: Python :: 3 :: Only",
+#     "License :: OSI Approved :: Apache Software License",
+#     "Intended Audience :: Science/Research",
+# ]
+keywords = [
+  "dynamical systems", "machine learning", "PyTorch"
 ]
 dependencies = [
     "wandb",
-    "ruamel-yaml",
-    "zencfg",
+    "ruamel.yaml",
     "configmypy",
+    "zencfg",
     "tensorly",
     "tensorly-torch",
+    "torch-harmonics"
     "matplotlib",
-    "numpy>=1.25",
     "opt-einsum",
     "h5py",
-    "zencfg>=0.3.0",
+    "zarr"
 ]
-requires-python = ">=3.9"
-readme = "README.rst"
-license = {text = "MIT"}
 
-# Dynamic versioning
+# `version` is automatically set by flit to use `swirl_dynamics.__version__`
 dynamic = ["version"]
 
-# # Required config for build system
+
 [build-system]
-requires = ["setuptools>=64", "wheel"]
-build-backend = "setuptools.build_meta"
-
-[project.optional-dependencies]
-dev = [
-    "pytest",
-    "flaky",
-    "black"
-
-]
-doc = [
-    "matplotlib",
-    "myst-nb",
-    "numpydoc",
-    "numpy>=1.25",
-    "sphinx",
-    "sphinx-gallery",
-    "sphinx-design",
-    "tensorly_sphinx_theme",
-    "torchtnt",
-    "torch_harmonics==0.7.4"
-]
-all = [
-    "pytest",
-    "flaky",
-    "black",
-    "matplotlib",
-    "myst-nb",
-    "numpydoc",
-    "sphinx",
-    "sphinx-gallery",
-    "sphinx-design",
-    "tensorly_sphinx_theme",
-    "torchtnt",
-    "numpy>=1.25",
-    "scipy",
-    "torch_harmonics==0.7.4"
-]
-# [build-system]
-# # Build system specify which backend is used to build/install the project (flit,
-# # poetry, setuptools,...). All backends are supported by `pip install`
-# requires = ["flit_core >=3.8,<4"]
-# build-backend = "flit_core.buildapi
+# Build system specify which backend is used to build/install the project (flit,
+# poetry, setuptools,...). All backends are supported by `pip install`
+requires = ["flit_core >=3.8,<4"]
+build-backend = "flit_core.buildapi"
