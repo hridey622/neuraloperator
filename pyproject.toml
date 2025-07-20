@@ -31,8 +31,7 @@ dependencies = [
     "zarr",
 ]
 
-# `version` is automatically set by flit to use `swirl_dynamics.__version__`
-dynamic = ["version"]
+version = "0.1.0"
 
 
 [build-system]
